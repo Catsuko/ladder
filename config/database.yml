@@ -1,0 +1,24 @@
+default: &default
+  adapter: postgresql
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:
+  <<: *default
+  encoding: unicode
+  database: ladder_dev
+  username: lewis
+  password: password
+
+test:
+  <<: *default
+  encoding: unicode
+  database: ladder_test
+  username: lewis
+  password: password
+
+production:
+  <<: *default
+  database: ladder_production
+  username: lewis
+  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
