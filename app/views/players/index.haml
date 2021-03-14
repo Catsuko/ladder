@@ -1,0 +1,5 @@
+%h1 Players
+
+= render(partial: 'players/list', locals: { players: @players })
+.mt2
+  = link_to('Create Player', new_player_path)
