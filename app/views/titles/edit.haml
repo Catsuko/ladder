@@ -1,0 +1,18 @@
+- action = @title.persisted? ? 'Change' : 'Create'
+%h1 
+  = action
+  Title
+
+- if @title.errors.any?
+  %p.red.b Failed :(
+
+= form_with(model: [:game, @title]) do |form|
+  = form.label(:rank)
+  = form.number_field(:rank, required: true, min: 1)
+
+  = form.label(:name)
+  = form.text_field(:name, required: true)
+
+  .flex.flex-wrap.items-center
+    = link_to('Back', game_titles_path(game_id: params.require(:game_id)))
+    = form.submit(action)

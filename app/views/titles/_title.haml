@@ -1,0 +1,7 @@
+%li.w-100.flex.justify-between.items-center
+  %p.mr3
+    = title.rank
+  %p.flex-auto
+    = title.name
+  = link_to('edit', edit_game_title_path(id: title.id))
+  = button_to('delete', game_title_path(id: title.id), method: :delete, class: 'button')

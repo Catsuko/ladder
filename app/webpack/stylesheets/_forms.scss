@@ -10,3 +10,11 @@ form {
     @extend .ml3;
   }
 }
+
+form.button_to {
+  @extend .pt0;
+
+  input {
+    @extend .bg-transparent, .bn, .pointer, .dim;
+  }
+}

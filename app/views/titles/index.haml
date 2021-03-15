@@ -1,0 +1,8 @@
+.flex.justify-between.items-center.w-100
+  %h1
+    = link_to(@game.name, game_path(@game))
+    > Titles
+  = link_to('Create', new_game_title_path)
+
+%ol.ma2.center.flex.flex-wrap.w-100.justify-center
+  = @titles.present? ? render(@titles) : 'No titles yet...'

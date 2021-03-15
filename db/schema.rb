@@ -10,16 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_15_091029) do
+ActiveRecord::Schema.define(version: 2021_03_15_122030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "games", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_games_on_name", unique: true
+  end
 
   create_table "players", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "discord_id", null: false
     t.index ["discord_id"], name: "index_players_on_discord_id", unique: true
+  end
+
+  create_table "titles", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "rank", null: false
+    t.bigint "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_titles_on_game_id"
+    t.index ["rank", "game_id"], name: "index_titles_on_rank_and_game_id", unique: true
+    t.index ["rank"], name: "index_titles_on_rank"
   end
 
 end

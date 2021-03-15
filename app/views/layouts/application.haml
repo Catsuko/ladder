@@ -10,5 +10,8 @@
   = stylesheet_pack_tag 'stylesheet', media: 'all'
   %link{ href: 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap', rel: 'stylesheet' }
 %body.bg-lightest-blue
-  .center.w-100.mw8.shadow-3.bg-white.pv4.ph5.ma4
+  %header.w-100.pa2.f6.fw3.flex.justify-end
+    - %i[players games].each do |resource|
+      = link_to(resource, try(:"#{resource}_path"), class: 'mh2')
+  .center.w-100.mw8.ba.b--dark-gray.bg-white.pv4.ph5.ma4
     = yield

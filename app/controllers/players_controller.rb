@@ -11,7 +11,7 @@ class PlayersController < ApplicationController
     Player.create!(params.require(:player).permit(:discord_id))
     redirect_to players_path
   rescue ActiveRecord::RecordInvalid, ActiveRecord::RecordNotUnique => e
-    @player = e.record
+    @player = e.try(:record) || Player.new
     render action: :new
   end
 end

@@ -3,4 +3,4 @@
   = link_to('Create', new_player_path)
 
 .ma2.center.flex.flex-wrap.w-100.justify-center
-  = render(partial: 'players/list', locals: { players: @players })
+  = @players.present? ? render(@players, cached: true) : 'No players yet...'

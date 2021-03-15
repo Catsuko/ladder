@@ -1,0 +1,6 @@
+.flex.justify-between.items-center.w-100
+  %h1 Games
+  = link_to('Create', new_game_path)
+
+.ma2.center.flex.flex-column.w-100.justify-center
+  = @games.present? ? render(@games) : 'No games yet...'
