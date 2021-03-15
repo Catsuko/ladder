@@ -6,7 +6,7 @@ class MatchesController < ApplicationController
   end
 
   def create
-    Match.create!(create_params.merge(game_id: params.require(:game_id))) }
+    Match.create!(create_params)
     redirect_to game_path(id: params.require(:game_id))
   rescue ActiveRecord::RecordInvalid, ActiveRecord::RecordNotUnique => e
     @match = e.try(:record) || Match.new
