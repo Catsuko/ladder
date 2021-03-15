@@ -1,7 +1,10 @@
 %h1 Create Player
+- if @player.errors.any?
+  %p.red.b Failed to create player, please check your discord id is correct.
+
 = form_with(model: @player) do |form|
   = form.label(:discord_id, 'Discord User Id')
   = form.number_field(:discord_id, required: true)
   .flex.flex-wrap.items-center
-    = link_to('Back', :back)
+    = link_to('Back', players_path)
     = form.submit('Create')
