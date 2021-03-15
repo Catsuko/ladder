@@ -8,7 +8,7 @@ class PlayersController < ApplicationController
   end
 
   def create
-    @player = Player.create!(params.require(:player).permit(:name))
+    @player = Player.create!(params.require(:player).permit(:discord_id))
     redirect_to root_path
   rescue ActiveRecord::RecordInvalid, ActiveRecord::RecordNotUnique
     render :new

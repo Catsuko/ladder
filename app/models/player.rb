@@ -1,3 +1,7 @@
 class Player < ApplicationRecord
-  validates :name, presence: true
+  validates :discord_id, presence: true
+
+  def profile
+    Profile.new(discord_id)
+  end
 end

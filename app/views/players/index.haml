@@ -1,5 +1,7 @@
 %h1 Players
 
-= render(partial: 'players/list', locals: { players: @players })
+.ma2.center.flex.flex-wrap.w-100.justify-around
+  = render(partial: 'players/list', locals: { players: @players })
+
 .mt2
   = link_to('Create Player', new_player_path)
