@@ -1,0 +1,5 @@
+%h3
+  Match
+  = match.updated_at.strftime('%-d/%-m/%y')
+.flex.w-100.items-center
+  = render(match.match_players)

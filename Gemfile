@@ -7,6 +7,7 @@ gem 'rails', '~> 5.2.2'
 gem 'pg'
 gem 'puma', '~> 3.11'
 gem "haml-rails", "~> 2.0"
+gem 'react-rails'
 gem 'webpacker', '~> 4.0'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'discordrb'

@@ -3,8 +3,12 @@
     = @game.name
   = link_to('Back', games_path)
 
+.flex.w-100.items-center.spaced-children
+  = link_to('Record Match', new_game_match_path(game_id: @game.id))
+  = link_to('Titles', game_titles_path(game_id: @game.id))
+
 %h2 Standings
 
-= link_to('Titles', game_titles_path(game_id: @game.id))
-
 %h2 Match History
+
+= render(@recent_matches)

@@ -5,6 +5,7 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params.require(:id))
+    @recent_matches = @game.matches.limit(3).includes(match_players: :player)
   end
 
   def new
