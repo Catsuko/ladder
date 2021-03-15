@@ -8,5 +8,7 @@
   = csp_meta_tag
   = javascript_pack_tag 'application'
   = stylesheet_pack_tag 'stylesheet', media: 'all'
-%body
-  = yield
+  %link{ href: 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap', rel: 'stylesheet' }
+%body.bg-lightest-blue
+  .center.w-100.mw8.shadow-3.bg-white.pv4.ph5.ma4
+    = yield

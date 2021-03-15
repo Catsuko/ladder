@@ -1,7 +1,6 @@
-%h1 Players
+.flex.justify-between.items-center.w-100
+  %h1 Players
+  = link_to('Create', new_player_path)
 
-.ma2.center.flex.flex-wrap.w-100.justify-around
+.ma2.center.flex.flex-wrap.w-100.justify-center
   = render(partial: 'players/list', locals: { players: @players })
-
-.mt2
-  = link_to('Create Player', new_player_path)

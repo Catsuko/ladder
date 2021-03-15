@@ -1,0 +1,12 @@
+form {
+  @extend .pt3;
+
+  & input {
+    @extend .mv2;
+    display: block;
+  }
+
+  & input[type='submit'] {
+    @extend .ml3;
+  }
+}
